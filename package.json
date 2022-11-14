@@ -12,7 +12,8 @@
     "e2e:chrome": "cypress run --browser chrome",
     "e2e:firefox": "cypress run --browser firefox",
     "e2e:edge": "cypress run --browser edge",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "postinstall": "prisma generate && husky install"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
