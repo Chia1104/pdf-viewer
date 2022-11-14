@@ -1,0 +1,22 @@
+.confirm {
+  background: linear-gradient(
+    180deg,
+    rgba(38, 50, 56, 0.38) 0%,
+    rgba(38, 50, 56, 0.2) 30%,
+    rgba(255, 255, 255, 0.38) 98%
+  );
+}
+.cancel {
+  background: linear-gradient(
+    180deg,
+    rgba(143, 23, 23, 0.38) 0%,
+    rgba(255, 255, 255, 0.38) 98%
+  );
+}
+.disabled {
+  background: linear-gradient(
+    180deg,
+    rgba(38, 50, 56, 0.2) 5%,
+    rgba(255, 255, 255, 0.38) 98%
+  );
+}

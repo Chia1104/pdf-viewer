@@ -7,6 +7,8 @@ const Home = () => {
     <Page className="c-container flex items-center justify-center h-screen">
       <div className="flex flex-col gap-10">
         <Button text="Home Page" />
+        <Button text="Cancel" type="cancel" />
+        <Button text="Disable" disabled />
         {session ? (
           <Button text="Logout" onClick={() => signOut()} />
         ) : (
