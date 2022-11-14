@@ -11,7 +11,8 @@ This is a simple PDF viewer for the web. It uses the PDF.js library to render PD
 
 ### 🌐 Demo
 
-👷 Work in progress
+- [Vercel](https://pdf-viewer-theta.vercel.app)
+- [Railway](https://pdf-viewer-production.up.railway.app)
 
 ## Development
 
