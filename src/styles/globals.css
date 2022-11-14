@@ -14,6 +14,36 @@
     @apply
     container mx-auto
   }
+
+  .c-bg-primary {
+    @apply bg-light dark:bg-dark text-dark dark:text-white transition ease-in-out
+  }
+
+  .c-bg-secondary {
+    @apply bg-white/90 dark:bg-dark/90 text-dark dark:text-white transition ease-in-out backdrop-blur-sm
+  }
+
+  .c-button-primary {
+    @apply
+    bg-primary rounded-full drop-shadow-lg text-white hover:bg-secondary transition ease-in-out flex justify-center items-center px-3 py-1
+  }
+
+  .c-button-secondary {
+    @apply
+    c-bg-secondary backdrop-blur-md transition ease-in-out rounded px-5 py-3 text-2xl
+  }
+
+  .modal {
+    @apply w-bg-secondary fixed top-0 left-0 w-full h-full flex justify-center items-center z-[999]
+  }
+
+  .c-title {
+    @apply text-2xl font-bold
+  }
+
+  .c-subtitle {
+    @apply text-xl font-medium
+  }
 }
 
 html,
