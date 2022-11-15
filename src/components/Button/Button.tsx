@@ -4,6 +4,7 @@
   type DetailedHTMLProps,
 } from "react";
 import cx from "classnames";
+import styles from "./Button.module.scss";
 
 interface Props
   extends DetailedHTMLProps<
@@ -11,26 +12,22 @@ interface Props
     HTMLButtonElement
   > {
   text: string;
+  customType?: "confirm" | "cancel";
 }
 
 const Button: FC<Props> = (props) => {
-  const { text, disabled, className, ...rest } = props;
+  const { text, customType = "confirm", disabled } = props;
   return (
     <button
       className={cx(
-        "group relative inline-flex transition ease-in-out rounded self-center bg-secondary dark:bg-primary",
-        className
-      )}
-      {...rest}>
-      <span
-        className={cx(
-          "c-button-secondary transform text-base",
-          disabled
-            ? "text-gray-400 cursor-not-allowed"
-            : "group-hover:-translate-x-1 group-hover:-translate-y-1"
-        )}>
-        {text}
-      </span>
+        "px-8 py-3 border-[1px] border-solid rounded-[30px] text-base font-semibold",
+        disabled
+          ? `text-[#c1c9cc] cursor-not-allowed ${styles.disabled}`
+          : customType == "confirm"
+          ? `border-[#C0C0C0] text-[#455A64] hover:bg-[#C0C0C0] ${styles.confirm}`
+          : `border-[#CCB8B8] text-[#973232] hover:bg-[#CCB8B8] ${styles.cancel}`
+      )}>
+      {text}
     </button>
   );
 };
