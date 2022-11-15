@@ -1,5 +1,7 @@
 FROM node:16-alpine AS deps
-RUN apk add --no-cache libc6-compat
+RUN apk update && \
+    apk add --no-cache \
+    libc6-compat
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
