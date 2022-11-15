@@ -1,6 +1,7 @@
 FROM node:16-alpine AS deps
 RUN apk update && \
     apk add --no-cache \
+    python3 \
     libc6-compat
 
 WORKDIR /app
