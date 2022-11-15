@@ -34,7 +34,7 @@ const Head: FC<Props> = (props) => {
       <meta property="og:type" content={type} key="type" />
       <meta name="twitter:card" content="summary_large_image" />
       <link rel="icon" href="/favicon.ico" />
-      <meta name="theme-color" content="#2B2E4A" />
+      <meta name="theme-color" content="#455A64" />
       <meta property="og:image" content={imageUrl || ""} key="image" />
     </NextHead>
   );

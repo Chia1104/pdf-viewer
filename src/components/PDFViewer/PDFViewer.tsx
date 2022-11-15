@@ -3,7 +3,7 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import { useState, type FC, type ChangeEvent } from "react";
 import { PDFJS_VERSION } from "@/shared/constants";
 
-const PdfViewer: FC = () => {
+const PDFViewer: FC = () => {
   const [fileUrl, setFileUrl] = useState("");
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -28,4 +28,4 @@ const PdfViewer: FC = () => {
   );
 };
 
-export default PdfViewer;
+export default PDFViewer;

@@ -16,7 +16,7 @@
   }
 
   .c-bg-primary {
-    @apply bg-light dark:bg-dark text-dark dark:text-white transition ease-in-out
+    @apply bg-[#EFEFEF] dark:bg-dark text-dark dark:text-white transition ease-in-out
   }
 
   .c-bg-secondary {
@@ -80,5 +80,5 @@ a {
 
 ::selection {
   color: #fff;
-  background: rgba(255,155,26,0.5);
+  background: rgba(127, 171, 190, 0.8);
 }
