@@ -16,7 +16,7 @@ interface Props
 }
 
 const Button: FC<Props> = (props) => {
-  const { text, customType = "confirm", disabled } = props;
+  const { text, customType = "confirm", disabled, ...rest } = props;
   return (
     <button
       className={cx(
@@ -26,7 +26,8 @@ const Button: FC<Props> = (props) => {
           : customType == "confirm"
           ? `border-[#C0C0C0] text-[#455A64] hover:bg-[#C0C0C0] ${styles.confirm}`
           : `border-[#CCB8B8] text-[#973232] hover:bg-[#CCB8B8] ${styles.cancel}`
-      )}>
+      )}
+      {...rest}>
       {text}
     </button>
   );

@@ -14,7 +14,7 @@ interface Props
 }
 
 const Button: FC<Props> = (props) => {
-  const { text, disabled } = props;
+  const { text, disabled, ...rest } = props;
   return (
     <button
       className={cx(
@@ -22,7 +22,8 @@ const Button: FC<Props> = (props) => {
         disabled
           ? `border-[#c1c9cc] text-[#c1c9cc] cursor-not-allowed`
           : `border-[#7FABBE] text-[#7FABBE] hover:bg-[#7FABBE] hover:text-white`
-      )}>
+      )}
+      {...rest}>
       <span className="flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
