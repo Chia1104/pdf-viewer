@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 RUN yarn global add pnpm && \
-    pnpm add sharp
+    pnpm i
 
 FROM node:16-alpine AS builder
 
@@ -22,8 +22,8 @@ ENV GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
 ARG GOOGLE_CLIENT_SECRET
 ENV GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
 
-RUN yarn prisma generate
-RUN yarn build
+RUN yarn prisma generate && \
+    yarn build
 
 FROM node:16-alpine AS runner
 

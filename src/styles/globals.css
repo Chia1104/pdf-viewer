@@ -44,6 +44,15 @@
   .c-subtitle {
     @apply text-xl font-medium
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: auto;
+    scrollbar-width: none;
+  }
 }
 
 html,
