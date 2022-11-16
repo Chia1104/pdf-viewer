@@ -12,7 +12,6 @@ specifiers:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@types/react-pdf': ^5.7.4
-  '@types/react-signature-canvas': ^1.0.2
   '@typescript-eslint/eslint-plugin': ^5.42.0
   '@typescript-eslint/parser': ^5.42.0
   '@vitejs/plugin-react': ^2.2.0
@@ -74,7 +73,6 @@ devDependencies:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@types/react-pdf': 5.7.4
-  '@types/react-signature-canvas': 1.0.2
   '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
   '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
   '@vitejs/plugin-react': 2.2.0
@@ -906,13 +904,6 @@ packages:
       - worker-loader
     dev: true
 
-  /@types/react-signature-canvas/1.0.2:
-    resolution: {integrity: sha512-uDHDoo2JM/9qYS+U7PRKDLBgOnQOOUEkDdXjCxBvI19fWtOLqXisrjiquPu+enu5iu2oWIfU7cVhn1QJZPkLTg==}
-    dependencies:
-      '@types/react': 18.0.25
-      '@types/signature_pad': 2.3.2
-    dev: true
-
   /@types/react/18.0.25:
     resolution: {integrity: sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g==}
     dependencies:
@@ -927,10 +918,6 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
-    dev: true
-
-  /@types/signature_pad/2.3.2:
-    resolution: {integrity: sha512-dDfWIgRcdzAaeVOpLRmLHIumGwc5inSD4Dj2Duis3yUEoSADZECLJHKkUQphbaANQ7kSC2bkf1JzyBPSmTlrPQ==}
     dev: true
 
   /@types/sinonjs__fake-timers/8.1.1:
