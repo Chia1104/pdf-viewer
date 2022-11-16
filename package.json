@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "vercel-build": "yum install libuuid-devel libmount-devel zlib && cp /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/",
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
@@ -23,7 +22,6 @@
     "@geist-ui/core": "^2.3.8",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "^4.6.1",
-    "canvas": "^2.10.2",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.6",
     "framer-motion": "^7.6.6",
