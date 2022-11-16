@@ -1,4 +1,4 @@
-import { Page, Button, IButton, Head } from "@/components";
+import { Page, Head, PDFViewer } from "@/components";
 import { meta } from "@/shared/meta";
 
 const Home = () => {
@@ -6,11 +6,7 @@ const Home = () => {
     <Page className="c-container flex items-center justify-center h-screen">
       <Head title={meta.title} description={meta.description} />
       <article className="flex flex-col gap-10 w-full">
-        <IButton text="簽名" />
-        <IButton text="日期" disabled />
-        <Button>Home Page</Button>
-        <Button customType="cancel">Cancel</Button>
-        <Button disabled>Disabled</Button>
+        <PDFViewer />
       </article>
     </Page>
   );

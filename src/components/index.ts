@@ -5,3 +5,4 @@ export { default as IButton } from "./IButton";
 export { default as Page } from "./Page";
 export { default as MainNav } from "./MainNav";
 export { default as Avatar } from "./Avatar";
+export { default as PDFViewer } from "./PDFViewer";

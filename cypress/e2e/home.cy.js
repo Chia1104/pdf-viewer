@@ -1,6 +1,6 @@
-describe("H1 Chia1104", () => {
-  it("Should return Chia1104 in h1 tag", () => {
-    cy.visit("http://localhost:3000/");
-    cy.get("h1").should("contain", "PDF Viewer");
+describe("Check Main Nav", () => {
+  it("Should return '點點簽' in h1 tag", () => {
+    cy.visit("/");
+    cy.get("h1").should("contain", "點點簽");
   });
 });
