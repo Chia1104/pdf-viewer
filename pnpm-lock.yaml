@@ -12,6 +12,7 @@ specifiers:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@types/react-pdf': ^5.7.4
+  '@types/react-signature-canvas': ^1.0.2
   '@typescript-eslint/eslint-plugin': ^5.42.0
   '@typescript-eslint/parser': ^5.42.0
   '@vitejs/plugin-react': ^2.2.0
@@ -38,6 +39,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-pdf: ^6.1.0
+  react-signature-canvas: ^1.0.6
   sass: ^1.56.1
   shell-quote: ^1.7.4
   tailwind-scrollbar: ^2.0.1
@@ -61,6 +63,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-pdf: 6.1.0_wvil6ba7rneto3zqhrwqtrm7lm
+  react-signature-canvas: 1.0.6_biqbaboplfbrettd7655fr4n2y
   usehooks-ts: 2.9.1_biqbaboplfbrettd7655fr4n2y
   zod: 3.19.1
 
@@ -73,6 +76,7 @@ devDependencies:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@types/react-pdf': 5.7.4
+  '@types/react-signature-canvas': 1.0.2
   '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
   '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
   '@vitejs/plugin-react': 2.2.0
@@ -904,6 +908,13 @@ packages:
       - worker-loader
     dev: true
 
+  /@types/react-signature-canvas/1.0.2:
+    resolution: {integrity: sha512-uDHDoo2JM/9qYS+U7PRKDLBgOnQOOUEkDdXjCxBvI19fWtOLqXisrjiquPu+enu5iu2oWIfU7cVhn1QJZPkLTg==}
+    dependencies:
+      '@types/react': 18.0.25
+      '@types/signature_pad': 2.3.2
+    dev: true
+
   /@types/react/18.0.25:
     resolution: {integrity: sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g==}
     dependencies:
@@ -918,6 +929,10 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/signature_pad/2.3.2:
+    resolution: {integrity: sha512-dDfWIgRcdzAaeVOpLRmLHIumGwc5inSD4Dj2Duis3yUEoSADZECLJHKkUQphbaANQ7kSC2bkf1JzyBPSmTlrPQ==}
     dev: true
 
   /@types/sinonjs__fake-timers/8.1.1:
@@ -4488,6 +4503,19 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /react-signature-canvas/1.0.6_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-NoMHomYu9HxFeLjUGbIeV9abPdWSROfFxFNDekGdwmmaIx+w5ziOEiU2C34X0Ao4GxFnwqyUy/BpYlA4lCD1CA==}
+    peerDependencies:
+      prop-types: ^15.5.8
+      react: 0.14 - 18
+      react-dom: 0.14 - 18
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      signature_pad: 2.3.2
+      trim-canvas: 0.1.2
+    dev: false
+
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -4701,6 +4729,10 @@ packages:
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+
+  /signature_pad/2.3.2:
+    resolution: {integrity: sha512-peYXLxOsIY6MES2TrRLDiNg2T++8gGbpP2yaC+6Ohtxr+a2dzoaqWosWDY9sWqTAAk6E/TyQO+LJw9zQwyu5kA==}
+    dev: false
 
   /simple-concat/1.0.1:
     resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==}
@@ -5062,6 +5094,10 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       punycode: 2.1.1
+
+  /trim-canvas/0.1.2:
+    resolution: {integrity: sha512-nd4Ga3iLFV94mdhW9JFMLpQbHUyCQuhFOD71PEAt1NjtMD5wbZctzhX8c3agHNybMR5zXD1XTGoIEWk995E6pQ==}
+    dev: false
 
   /tsconfig-paths/3.14.1:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}

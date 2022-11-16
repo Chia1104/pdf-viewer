@@ -1,4 +1,4 @@
-// import SignatureCanvas from "react-signature-canvas";
+import SignatureCanvas from "react-signature-canvas";
 import { type FC, forwardRef, Ref, useRef, useState } from "react";
 import { Modal, Card, Button, ColorDot } from "@/components";
 
@@ -6,12 +6,12 @@ interface Props {
   onSign?: (data: string) => void;
   activeModal: () => void;
   isShowed: boolean;
-  // ref?: Ref<SignatureCanvas>;
+  ref?: Ref<SignatureCanvas>;
 }
 
 const Sign: FC<Props> = forwardRef((props: Props, ref) => {
   const { onSign, activeModal, isShowed } = props;
-  const sigCanvas = useRef(null);
+  const sigCanvas = useRef<SignatureCanvas>(null);
   const [penColor, setPenColor] = useState("#000000");
 
   return (
@@ -31,15 +31,15 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
           </h2>
         </div>
         <div className="relative">
-          {/*<SignatureCanvas*/}
-          {/*  ref={sigCanvas}*/}
-          {/*  penColor={penColor}*/}
-          {/*  canvasProps={{*/}
-          {/*    width: 486,*/}
-          {/*    height: 188,*/}
-          {/*    className: "bg-[#F5F5F5] border-y border-secondary",*/}
-          {/*  }}*/}
-          {/*/>*/}
+          <SignatureCanvas
+            ref={sigCanvas}
+            penColor={penColor}
+            canvasProps={{
+              width: 486,
+              height: 188,
+              className: "bg-[#F5F5F5] border-y border-secondary",
+            }}
+          />
           <div className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
             <ColorDot color="#E93C3C" onClick={() => setPenColor("#E93C3C")} />
             <ColorDot color="#3C6CE9" onClick={() => setPenColor("#3C6CE9")} />
