@@ -30,22 +30,31 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
             新建我的簽名
           </h2>
         </div>
-        <div className="relative">
-          <SignatureCanvas
-            ref={sigCanvas}
-            penColor={penColor}
-            canvasProps={{
-              width: 486,
-              height: 188,
-              className: "bg-[#F5F5F5] border-y border-secondary",
-            }}
-          />
-          <div className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
-            <ColorDot color="#E93C3C" onClick={() => setPenColor("#E93C3C")} />
-            <ColorDot color="#3C6CE9" onClick={() => setPenColor("#3C6CE9")} />
-            <ColorDot color="#000000" onClick={() => setPenColor("#000000")} />
-          </div>
-        </div>
+        <SignatureCanvas
+          ref={sigCanvas}
+          penColor={penColor}
+          canvasProps={{
+            width: 486,
+            height: 188,
+            className: "bg-[#F5F5F5] border-y border-secondary",
+          }}
+        />
+        {/*<div className="relative">*/}
+        {/*  <SignatureCanvas*/}
+        {/*    ref={sigCanvas}*/}
+        {/*    penColor={penColor}*/}
+        {/*    canvasProps={{*/}
+        {/*      width: 486,*/}
+        {/*      height: 188,*/}
+        {/*      className: "bg-[#F5F5F5] border-y border-secondary",*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*  <div className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">*/}
+        {/*    <ColorDot color="#E93C3C" onClick={() => setPenColor("#E93C3C")} />*/}
+        {/*    <ColorDot color="#3C6CE9" onClick={() => setPenColor("#3C6CE9")} />*/}
+        {/*    <ColorDot color="#000000" onClick={() => setPenColor("#000000")} />*/}
+        {/*  </div>*/}
+        {/*</div>*/}
         <div className="w-full h-[60px] flex justify-center items-center gap-[7px]">
           <Button
             customType="secondary-cancel"
