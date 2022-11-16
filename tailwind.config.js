@@ -1,10 +1,20 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  screen: {
+    sm: "375px",
+    md: "767px",
+    lg: "1023px",
+    xl: "1440px",
+  },
   theme: {
     extend: {
       colors: {
-        primary: "#2B2E4A",
-        secondary: "rgba(255,155,26,0.65)",
+        primary: "#455A64",
+        primaryTransparent: "rgba(69, 90, 100, 0.5)",
+        secondary: "#7FABBE",
+        red: "#E93C3C",
+        blue: "#3C6CE9",
+        error: "#973232",
         success: "#4caf50",
         info: "#2196f3",
         warning: "#ff9800",

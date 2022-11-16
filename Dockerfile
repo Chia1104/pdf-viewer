@@ -1,14 +1,7 @@
-FROM node:16-alpine AS deps
+FROM node:18-alpine AS deps
 RUN apk update && \
     apk add --no-cache \
-    python3 \
-    libc6-compat \
-    build-base \
-    g++ \
-    cairo-dev \
-    jpeg-dev \
-    pango-dev \
-    giflib-dev
+    libc6-compat
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
@@ -16,7 +9,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN yarn global add pnpm && \
     pnpm i
 
-FROM node:16-alpine AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -34,7 +27,7 @@ ENV GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
 RUN yarn prisma generate && \
     yarn build
 
-FROM node:16-alpine AS runner
+FROM node:18-alpine AS runner
 
 WORKDIR /app
 

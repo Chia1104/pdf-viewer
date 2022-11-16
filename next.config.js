@@ -31,7 +31,9 @@ const nextConfig = {
   async redirects() {
     return [];
   },
-  images: {},
+  images: {
+    domains: ["lh3.googleusercontent.com"],
+  },
   async headers() {
     return [
       {
