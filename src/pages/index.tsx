@@ -1,4 +1,4 @@
-import { Page, Button, PDFViewer, IButton, Head } from "@/components";
+import { Page, Button, IButton, Head } from "@/components";
 import { meta } from "@/shared/meta";
 
 const Home = () => {
@@ -11,7 +11,6 @@ const Home = () => {
         <Button text="Home Page" />
         <Button text="Cancel" customType="cancel" />
         <Button text="Disable" disabled />
-        <PDFViewer />
       </article>
     </Page>
   );

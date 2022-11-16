@@ -7,8 +7,9 @@ import {
   GOOGLE_CLIENT_SECRET,
   NEXTAUTH_SECRET,
 } from "@/shared/constants";
+import type { NextAuthOptions } from "next-auth";
 
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   secret: NEXTAUTH_SECRET,
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -17,4 +18,6 @@ export default NextAuth({
       clientSecret: GOOGLE_CLIENT_SECRET as string,
     }),
   ],
-});
+};
+
+export default NextAuth(authOptions);
