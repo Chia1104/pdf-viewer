@@ -1,7 +1,13 @@
 FROM node:18-alpine AS deps
 RUN apk update && \
     apk add --no-cache \
-    libc6-compat
+    libc6-compat \
+    build-base \
+    g++ \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    giflib-dev
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
