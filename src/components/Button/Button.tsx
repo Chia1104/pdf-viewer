@@ -11,12 +11,11 @@ interface Props
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  text: string;
   customType?: "confirm" | "cancel";
 }
 
 const Button: FC<Props> = (props) => {
-  const { text, customType = "confirm", disabled, ...rest } = props;
+  const { children, customType = "confirm", disabled, ...rest } = props;
   return (
     <button
       className={cx(
@@ -28,7 +27,7 @@ const Button: FC<Props> = (props) => {
           : `border-[#CCB8B8] text-[#973232] hover:bg-[#CCB8B8] ${styles.cancel}`
       )}
       {...rest}>
-      {text}
+      {children}
     </button>
   );
 };

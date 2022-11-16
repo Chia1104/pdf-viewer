@@ -8,9 +8,9 @@ const Home = () => {
       <article className="flex flex-col gap-10 w-full">
         <IButton text="簽名" />
         <IButton text="日期" disabled />
-        <Button text="Home Page" />
-        <Button text="Cancel" customType="cancel" />
-        <Button text="Disable" disabled />
+        <Button>Home Page</Button>
+        <Button customType="cancel">Cancel</Button>
+        <Button disabled>Disabled</Button>
       </article>
     </Page>
   );
