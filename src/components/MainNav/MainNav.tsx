@@ -4,6 +4,7 @@ import { Avatar, Image } from "@/components";
 import { meta } from "@/shared/meta";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Popover } from "@geist-ui/core";
+import Link from "next/link";
 
 const MainNav: FC = () => {
   const { data: session } = useSession();
@@ -36,7 +37,7 @@ const MainNav: FC = () => {
               lineHeight: "24px",
               letterSpacing: "0.05em",
             }}>
-            {meta.title}
+            <Link href="/">{meta.title}</Link>
           </h1>
         </div>
         <ul className="flex items-center w-[50%] justify-end mr-[36px]">

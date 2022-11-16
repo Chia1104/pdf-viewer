@@ -14,14 +14,15 @@ interface Props
 }
 
 const Button: FC<Props> = (props) => {
-  const { text, disabled, ...rest } = props;
+  const { text, disabled, className, ...rest } = props;
   return (
     <button
       className={cx(
-        "px-4 py-3 border-[1px] border-solid rounded-[40px] text-base font-semibold",
+        "px-2 py-3 border-[1px] border-solid rounded-[40px] text-base font-semibold",
         disabled
           ? `border-[#c1c9cc] text-[#c1c9cc] cursor-not-allowed`
-          : `border-[#7FABBE] text-[#7FABBE] hover:bg-[#7FABBE] hover:text-white`
+          : `border-[#7FABBE] text-[#7FABBE] hover:bg-[#7FABBE] hover:text-white`,
+        className
       )}
       {...rest}>
       <span className="flex items-center justify-center">

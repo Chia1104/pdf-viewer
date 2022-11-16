@@ -34,7 +34,7 @@
   }
 
   .modal {
-    @apply w-bg-secondary fixed top-0 left-0 w-full h-full flex justify-center items-center z-[999]
+    @apply bg-primaryTransparent fixed top-0 left-0 w-full h-full flex justify-center items-center z-[999]
   }
 
   .c-title {
