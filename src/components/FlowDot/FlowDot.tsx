@@ -7,7 +7,7 @@ const FlowDot: FC<Props> = (props) => {
   return (
     <span
       className={
-        "border-[10px] border-solid border-[#D9D9D9] inline-block w-[154px] h-[154px] rounded-full bg-primary text-white flex items-center justify-center"
+        "mx-[50px] border-[10px] border-solid border-[#D9D9D9] inline-block w-[154px] h-[154px] rounded-full bg-primary text-white flex items-center justify-center"
       }
       {...rest}>
       {children}

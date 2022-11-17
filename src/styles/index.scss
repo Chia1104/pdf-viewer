@@ -1,0 +1,30 @@
+.index {
+  ol li {
+    position: relative;
+    counter-increment: my-awesome-counter;
+    margin: 0 88px;
+  }
+  ol li::before {
+    content: counter(my-awesome-counter);
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    --size: 30px;
+    left: calc(-1 * var(--size) - 8px);
+    width: var(--size);
+    height: var(--size);
+    background: #c0c0c0;
+    border-radius: 50%;
+    text-align: center;
+  }
+  li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+    width: 124px;
+    height: 2px;
+    background-color: #455a64;
+  }
+}
