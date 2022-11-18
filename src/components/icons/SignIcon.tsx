@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import cx from "classnames";
 import { IconProps } from ".";
-import { Size } from "@/shared/types";
 
 const SignIcon: FC<IconProps> = (props) => {
   const { className, strokeWidth = 1.5, size = Size.Base } = props;
