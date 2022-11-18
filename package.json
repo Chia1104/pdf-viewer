@@ -24,7 +24,6 @@
     "@prisma/client": "^4.6.1",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.6",
-    "fabric": "^5.2.4",
     "framer-motion": "^7.6.6",
     "next": "13.0.3",
     "next-auth": "^4.16.4",
