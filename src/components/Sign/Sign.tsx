@@ -55,7 +55,6 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
                 onClick={() => setPenColor("#000000")}
               />
             </ColorDotWrapper>
-          </div>
         </div>
         <div className="w-full h-[60px] flex justify-center items-center gap-[7px]">
           <Button
