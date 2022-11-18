@@ -6,6 +6,7 @@ import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
 import { GeistProvider } from "@geist-ui/core";
 
+// @ts-ignore
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   return (
     <SessionProvider session={session}>
