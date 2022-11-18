@@ -40,20 +40,11 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
               className: "bg-[#F5F5F5] border-y border-secondary",
             }}
           />
-            <ColorDotWrapper className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]>
-              <ColorDot
-                color="#E93C3C"
-                onClick={() => setPenColor("#E93C3C")}
-              />
-              <ColorDot
-                color="#3C6CE9"
-                onClick={() => setPenColor("#3C6CE9")}
-              />
-              <ColorDot
-                color="#000000"
-                onClick={() => setPenColor("#000000")}
-              />
-            </ColorDotWrapper>
+          <ColorDotWrapper className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
+            <ColorDot color="#E93C3C" onClick={() => setPenColor("#E93C3C")} />
+            <ColorDot color="#3C6CE9" onClick={() => setPenColor("#3C6CE9")} />
+            <ColorDot color="#000000" onClick={() => setPenColor("#000000")} />
+          </ColorDotWrapper>
         </div>
         <div className="w-full h-[60px] flex justify-center items-center gap-[7px]">
           <Button
