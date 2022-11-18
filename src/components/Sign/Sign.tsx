@@ -40,7 +40,6 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
               className: "bg-[#F5F5F5] border-y border-secondary",
             }}
           />
-          <div className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
             <ColorDotWrapper className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]>
               <ColorDot
                 color="#E93C3C"
