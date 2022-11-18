@@ -17,7 +17,11 @@ interface Props
 const ColorDotWrapper: FC<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 > = ({ children, ...rest }) => {
-  return <div {...rest}>{children}</div>;
+  return (
+    <div role="group" {...rest}>
+      {children}
+    </div>
+  );
 };
 
 const ColorDot: FC<Props> = (props) => {
