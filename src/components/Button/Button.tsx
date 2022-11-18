@@ -4,7 +4,7 @@
   type DetailedHTMLProps,
 } from "react";
 import cx from "classnames";
-import styles from "./Button.module.scss";
+import styles from "./style.module.scss";
 
 interface Props
   extends DetailedHTMLProps<
@@ -32,7 +32,7 @@ const Button: FC<Props> = (props) => {
         customType === "cancel" &&
           `border-[#CCB8B8] text-[#973232] hover:bg-[#CCB8B8] ${styles.cancel}`,
         customType === "secondary-confirm" &&
-          "bg-white border-[#7FABBE] text-[#7FABBE] hover:bg-[#7FABBE] hover:text-white",
+          "bg-white border-secondary text-secondary hover:bg-secondary hover:text-white",
         customType === "secondary-cancel" &&
           "bg-white border-[#BE7F7F] text-[#BE7F7F] hover:bg-[#BE7F7F] hover:text-white",
         className
