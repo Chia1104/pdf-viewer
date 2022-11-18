@@ -14,7 +14,7 @@ const Home = () => {
       <Head title={meta.title} description={meta.description} />
       <article>
         <Card className="w-screen sm:w-full max-w-[824px] py-6 text-primary font-semibold">
-          <p className="mt-[100px] sm:mt-0 py-3 sm:py-0 sm:pl-20 sm:pb-7 text-center md:text-start text-xl md:text-base border-t sm:border-t-0 border-b border-solid border-[rgba(127, 171, 190, 0.6)] border-t-secondary">
+          <p className="mt-[124px] sm:mt-0 py-3 sm:py-0 md:pl-20 sm:pb-6 text-center md:text-start text-xl md:text-base border-b border-solid border-[rgba(127, 171, 190, 0.6)]">
             簡單、快速3步驟
             <br />
             線上文件簽署即簽即傳
@@ -28,7 +28,7 @@ const Home = () => {
                   </FlowDot>
                   <p
                     className={cx(
-                      "md:hidden text-center mt-1",
+                      "mt-3 sm:mt-1 md:hidden text-center",
                       index < 2 ? "mb-[60px] sm:mb-0" : ""
                     )}>
                     {descs[index]}

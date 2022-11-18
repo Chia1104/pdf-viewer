@@ -2,7 +2,7 @@
   ol li {
     position: relative;
     counter-increment: my-awesome-counter;
-    margin: 0 88px;
+    margin: 0 auto;
   }
   ol li::before {
     content: counter(my-awesome-counter);
@@ -23,7 +23,7 @@
     position: absolute;
     top: 50%;
     margin-left: 10px;
-    width: 124px;
+    width: 103px;
     height: 2px;
     background-color: #455a64;
   }
