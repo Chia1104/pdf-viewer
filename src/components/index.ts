@@ -10,4 +10,3 @@ export { default as Sign } from "./Sign";
 export { default as Modal } from "./Modal";
 export { default as Card } from "./Card";
 export { default as ColorDot } from "./ColorDot";
-export { default as FlowDot } from "./FlowDot";
