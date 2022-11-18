@@ -1,6 +1,6 @@
 import SignatureCanvas from "react-signature-canvas";
 import { type FC, forwardRef, Ref, useRef, useState } from "react";
-import { Modal, Card, Button, ColorDot } from "@/components";
+import { Modal, Card, Button, ColorDot, ColorDotWrapper } from "@/components";
 
 interface Props {
   onSign?: (data: string) => void;
@@ -40,11 +40,11 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
               className: "bg-[#F5F5F5] border-y border-secondary",
             }}
           />
-          <div className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
+          <ColorDotWrapper className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
             <ColorDot color="#E93C3C" onClick={() => setPenColor("#E93C3C")} />
             <ColorDot color="#3C6CE9" onClick={() => setPenColor("#3C6CE9")} />
             <ColorDot color="#000000" onClick={() => setPenColor("#000000")} />
-          </div>
+          </ColorDotWrapper>
         </div>
         <div className="w-full h-[60px] flex justify-center items-center gap-[7px]">
           <Button
