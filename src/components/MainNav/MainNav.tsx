@@ -37,7 +37,9 @@ const MainNav: FC = () => {
               lineHeight: "24px",
               letterSpacing: "0.05em",
             }}>
-            <Link href="/">{meta.title}</Link>
+            <Link href="/">
+              <a>{meta.title}</a>
+            </Link>
           </h1>
         </div>
         <ul className="flex items-center w-[50%] justify-end mr-[36px]">
