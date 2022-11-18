@@ -3,7 +3,7 @@ import { type FC, forwardRef, Ref, useRef, useState } from "react";
 import { Modal, Card, Button, ColorDot, ColorDotWrapper } from "@/components";
 
 interface Props {
-  onSign?: (data: string) => void;
+  onSign?: () => void;
   activeModal: () => void;
   isShowed: boolean;
   ref?: Ref<SignatureCanvas>;
@@ -30,14 +30,13 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
             新建我的簽名
           </h2>
         </div>
-        <div className="relative">
+        <div className="relative w-full">
           <SignatureCanvas
             ref={sigCanvas}
             penColor={penColor}
             canvasProps={{
-              width: 486,
-              height: 188,
-              className: "bg-[#F5F5F5] border-y border-secondary",
+              className:
+                "bg-[#F5F5F5] border-y border-secondary w-[336px] sm:w-[486px] h-[188px]",
             }}
           />
           <ColorDotWrapper className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
@@ -55,6 +54,7 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
             清除
           </Button>
           <Button
+            onClick={onSign}
             customType="secondary-confirm"
             className="bg-white w-[86px] h-[33px]">
             儲存
