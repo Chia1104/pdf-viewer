@@ -21,7 +21,7 @@ const Button: FC<Props> = (props) => {
         "px-2 py-3 border-[1px] border-solid rounded-[40px] text-base font-semibold",
         disabled
           ? `border-[#c1c9cc] text-[#c1c9cc] cursor-not-allowed`
-          : `border-[#7FABBE] text-[#7FABBE] hover:bg-[#7FABBE] hover:text-white`,
+          : `border-secondary text-secondary hover:bg-secondary hover:text-white`,
         className
       )}
       {...rest}>
@@ -34,7 +34,7 @@ const Button: FC<Props> = (props) => {
           stroke="currentColor"
           className={cx(
             "mr-2 w-5 h-5 text-white rounded-full",
-            disabled ? "bg-[#c1c9cc]" : "bg-[#7FABBE]"
+            disabled ? "bg-[#c1c9cc]" : "bg-secondary"
           )}>
           <path
             strokeLinecap="round"
