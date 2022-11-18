@@ -3,7 +3,7 @@ import cx from "classnames";
 import { IconProps } from ".";
 
 const UploadIcon: FC<IconProps> = (props) => {
-  const { className, strokeWidth = 1.5, size = Size.Base } = props;
+  const { className, strokeWidth = 1.5 } = props;
   return (
     <svg
       width="74"
