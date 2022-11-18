@@ -41,7 +41,7 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
             }}
           />
           <div className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]">
-            <ColorDotWrapper>
+            <ColorDotWrapper className="flex flex-col absolute top-0 right-0 mt-[45px] mr-[13px] gap-[4px]>
               <ColorDot
                 color="#E93C3C"
                 onClick={() => setPenColor("#E93C3C")}
