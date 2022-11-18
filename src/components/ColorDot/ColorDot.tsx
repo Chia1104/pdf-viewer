@@ -14,6 +14,7 @@ interface Props
   color: string;
 }
 
+// Co-authored-by: Kelly <redbeeno.1@gmail.com>
 const ColorDotWrapper: FC<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 > = ({ children, ...rest }) => {
