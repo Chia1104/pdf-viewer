@@ -8,7 +8,15 @@ import {
 } from "@/components/MultiStepForm/MultiStepForm";
 import { MAX_FILE_SIZE, MESSAGE } from "@/utils/file-validator.util";
 
-const FileInput: FC = () => {
+interface Props {
+  nextStep?: () => void;
+  isLastStep?: boolean;
+  prevStep?: () => void;
+  isFirstStep?: boolean;
+}
+
+const FileInput: FC<Props> = (props) => {
+  const { nextStep, prevStep, isFirstStep, isLastStep } = props;
   const { setToast } = useToasts();
   const id = useId();
   const { dispatch } = useContext(MultiStepFormContext);
@@ -52,12 +60,13 @@ const FileInput: FC = () => {
         file,
       },
     });
+    nextStep && nextStep();
   };
 
   return (
     <>
       <Card
-        className="w-[395px] h-[281px] flex flex-col justify-center items-center relative"
+        className="w-full max-w-[395px] h-[281px] flex flex-col justify-center items-center relative"
         style={{
           border: "1px dashed rgba(69, 90, 100, 0.4)",
         }}>

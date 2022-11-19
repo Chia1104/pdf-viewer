@@ -2,7 +2,7 @@ import { useState, type FC, useContext } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import workerSrc from "../../../pdf-worker";
 import { MultiStepFormContext } from "@/components/MultiStepForm/MultiStepForm";
-import { Button } from "@/components";
+import { Button, IButton } from "@/components";
 import Sign from "@/components/MultiStepForm/Sign";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
@@ -14,9 +14,12 @@ interface Props {
   isFirstStep?: boolean;
 }
 
-const PDFViewer: FC<Props> = (props) => {
+const SignPDF: FC<Props> = (props) => {
   const { nextStep, prevStep, isFirstStep, isLastStep } = props;
   const [numPages, setNumPages] = useState<number | null>(null);
+  const [signMode, setSignMode] = useState<boolean>(false);
+  const [dateMode, setDateMode] = useState<boolean>(false);
+  const [textMode, setTextMode] = useState<boolean>(false);
   const { state } = useContext(MultiStepFormContext);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
@@ -24,7 +27,7 @@ const PDFViewer: FC<Props> = (props) => {
   };
 
   return (
-    <>
+    <div className="relative">
       <div className="w-full max-w-[663px] h-[339px] overflow-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-thumb-rounded-full">
         {state.step1.isFileValid && (
           <Document
@@ -58,8 +61,14 @@ const PDFViewer: FC<Props> = (props) => {
           確認
         </Button>
       </div>
-    </>
+      <div className="absolute top-0 right-0 mr-[-130px] flex flex-col gap-[6px]">
+        <IButton text="簽名" onClick={() => setSignMode(!signMode)} />
+        <IButton text="日期" onClick={() => setDateMode(!dateMode)} />
+        <IButton text="文字" onClick={() => setTextMode(!textMode)} />
+      </div>
+      <Sign activeModal={() => setSignMode(!signMode)} isShowed={signMode} />
+    </div>
   );
 };
 
-export default PDFViewer;
+export default SignPDF;

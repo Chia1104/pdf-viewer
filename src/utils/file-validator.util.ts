@@ -17,16 +17,16 @@ const MESSAGE = {
 const FileSchema = z.object({
   file: z
     .any()
-    .refine((files) => files?.length == 1 || !files, MESSAGE.INVALID_FILE_TYPE)
-    .refine((files) => files[0].size > MAX_FILE_SIZE, MESSAGE.INVALID_FILE_SIZE)
+    .refine((file) => file, MESSAGE.INVALID_FILE_TYPE)
+    .refine((file) => file?.size <= MAX_FILE_SIZE, MESSAGE.INVALID_FILE_SIZE)
     .refine(
-      (files) => ACCEPTED_IMAGE_TYPES.includes(files[0].type),
-      MESSAGE.SUCCESS
+      (file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
+      MESSAGE.INVALID_FILE_TYPE
     ),
 });
 
-const validateFile = (files: File) => {
-  return FileSchema.safeParse({ file: files });
+const validateFile = (file: File) => {
+  return FileSchema.safeParse({ file: file });
 };
 
 export {
