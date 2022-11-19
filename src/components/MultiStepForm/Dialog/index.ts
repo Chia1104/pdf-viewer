@@ -1,4 +1,4 @@
-export { default as Dialog } from "./Dialog";
+export { default } from "./Dialog";
 export { default as TextDialog } from "./Text";
 export { default as DateDialog } from "./DateFormat";
 export { default as ConfirmDialog } from "./Confirm";

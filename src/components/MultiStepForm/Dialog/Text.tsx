@@ -1,5 +1,5 @@
 import { type FC, forwardRef } from "react";
-import { Dialog } from "./index";
+import Dialog from "./Dialog";
 
 interface Props {
   activeModal: () => void;
