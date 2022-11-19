@@ -12,7 +12,7 @@ import { Card, Button } from "@/components";
 import { useId } from "react";
 
 interface Props {
-  ref?: Ref<HTMLInputElement>;
+  ref?: Ref<any>;
 }
 
 const FileInput: FC<Props> = forwardRef((props: Props, ref) => {
@@ -20,14 +20,13 @@ const FileInput: FC<Props> = forwardRef((props: Props, ref) => {
   const id = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  useImperativeHandle(
-    ref,
-    // @ts-ignore
-    () => {
-      getFile: file;
-    },
-    [setFile]
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      getFiles: () => {
+        return file ? [file] : [];
+      },
+    };
+  });
 
   const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     // @ts-ignore

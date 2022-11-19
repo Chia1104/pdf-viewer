@@ -10,11 +10,11 @@ const Home = () => {
   const icons = [UploadIcon, SignIcon, LogoIcon];
   const descs = ["上傳簽署檔案", "進行簽署", "簽署完成"];
   return (
-    <Page className="c-container flex items-center justify-center h-screen">
+    <Page className="c-container flex items-center justify-center min-h-screen">
       <Head title={meta.title} description={meta.description} />
-      <article>
-        <Card className="w-screen sm:w-full max-w-[824px] py-6 text-primary font-semibold">
-          <p className="mt-[150px] sm:mt-0 py-3 sm:py-0 md:pl-20 sm:pb-6 text-center md:text-start text-xl md:text-base border-b border-solid border-[rgba(127, 171, 190, 0.6)]">
+      <article className="pt-[80px] sm:pt-0">
+        <Card className="min-h-screen sm:min-h-fit w-screen sm:w-full max-w-[824px] py-6 text-primary font-semibold border-0 sm:border sm:rounded-[20px] rounded-none">
+          <p className="py-3 sm:py-0 md:pl-20 sm:pb-6 text-center md:text-start text-xl md:text-base border-b border-solid border-[rgba(127, 171, 190, 0.6)]">
             簡單、快速3步驟
             <br />
             線上文件簽署即簽即傳
