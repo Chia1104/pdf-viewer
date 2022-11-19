@@ -9,6 +9,9 @@ import { Card, Button } from "@/components";
 import { useMultistep } from "@/hooks";
 import PDFViewer from "@/components/MultiStepForm/PDFViewer";
 import FileInput from "@/components/MultiStepForm/FileInput";
+import FormStep from "@/components/MultiStepForm/FormStep";
+import FileInfo from "@/components/MultiStepForm/FileInfo";
+import SignPDF from "@/components/MultiStepForm/SignPDF";
 
 interface State {
   step1: {
@@ -113,29 +116,22 @@ const MultiStepFormProvider = ({ children }: { children: ReactNode }) => {
 
 const MultiStepForm: FC = () => {
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
-    // eslint-disable-next-line react/jsx-key
-    useMultistep([<FileInput />, <PDFViewer />]);
+    useMultistep([
+      // eslint-disable-next-line react/jsx-key
+      <FileInput nextStep={() => next()} />,
+      // eslint-disable-next-line react/jsx-key
+      <FileInfo nextStep={() => next()} prevStep={() => back()} />,
+      // eslint-disable-next-line react/jsx-key
+      <SignPDF nextStep={() => next()} prevStep={() => back()} />,
+    ]);
   return (
     <MultiStepFormProvider>
-      <Card className="w-full max-w-[823px] h-[525px] flex flex-col justify-center items-center">
+      <Card className="w-full max-w-[823px] h-[590px] flex flex-col items-center">
+        <div className="w-full max-w-[740px] mt-[30px] mb-[45px]">
+          <FormStep currentStep={currentStepIndex} />
+        </div>
         {step}
       </Card>
-      <div className="flex justify-center items-center mt-[26px] gap-[24px]">
-        <Button
-          customType="cancel"
-          onClick={back}
-          disabled={isFirstStep}
-          className="w-[117px]">
-          取消
-        </Button>
-        <Button
-          customType="confirm"
-          onClick={next}
-          disabled={isLastStep}
-          className="w-[117px]">
-          確認
-        </Button>
-      </div>
     </MultiStepFormProvider>
   );
 };
