@@ -11,7 +11,12 @@ interface Props
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  customType?: "confirm" | "cancel" | "secondary-confirm" | "secondary-cancel";
+  customType?:
+    | "confirm"
+    | "cancel"
+    | "secondary-confirm"
+    | "secondary-cancel"
+    | "primary";
 }
 
 const Button: FC<Props> = (props) => {
@@ -35,6 +40,8 @@ const Button: FC<Props> = (props) => {
           "bg-white border-secondary text-secondary hover:bg-secondary hover:text-white",
         customType === "secondary-cancel" &&
           "bg-white border-[#BE7F7F] text-[#BE7F7F] hover:bg-[#BE7F7F] hover:text-white",
+        customType === "primary" &&
+          "bg-white border-primary text-primary hover:bg-primary hover:text-white",
         className
       )}
       {...rest}>

@@ -3,7 +3,6 @@ import { Dialog } from "./index";
 import dayjs from "dayjs";
 
 interface Props {
-  onSign?: (data: string) => void;
   activeModal: () => void;
   isShowed: boolean;
 }

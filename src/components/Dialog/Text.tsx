@@ -2,7 +2,6 @@ import { type FC, forwardRef } from "react";
 import { Dialog } from "./index";
 
 interface Props {
-  onSign?: (data: string) => void;
   activeModal: () => void;
   isShowed: boolean;
 }
