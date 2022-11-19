@@ -1,6 +1,6 @@
-import { Page, Head, PDFViewer, IButton, Sign } from "@/components";
+import { Page, Head, MultiStepForm, IButton, Sign } from "@/components";
 import { meta } from "@/shared/meta";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const SignPDFPage = () => {
   const [isShowed, setIsShowed] = useState(false);
@@ -13,8 +13,12 @@ const SignPDFPage = () => {
           onClick={() => setIsShowed(!isShowed)}
           className="w-[85px]"
         />
-        <Sign isShowed={isShowed} activeModal={() => setIsShowed(!isShowed)} />
-        <PDFViewer />
+        <Sign
+          isShowed={isShowed}
+          activeModal={() => setIsShowed(!isShowed)}
+          onSign={() => console.log("test")}
+        />
+        <MultiStepForm />
       </article>
     </Page>
   );

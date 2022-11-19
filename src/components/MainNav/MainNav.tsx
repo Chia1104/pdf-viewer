@@ -19,7 +19,7 @@ const MainNav: FC = () => {
     </>
   );
   return (
-    <nav className="w-screen flex h-[80px] items-center justify-center top-0 fixed z-50 bg-white">
+    <nav className="w-screen flex h-[80px] items-center justify-center top-0 fixed z-50 bg-white border border-b-secondary sm:border-0">
       <div className="flex container w-[100%]">
         <div className="flex items-center w-[50%] justify-start">
           <Image
