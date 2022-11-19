@@ -18,7 +18,7 @@ const Button: FC<Props> = (props) => {
   return (
     <button
       className={cx(
-        "px-2 py-3 border-[1px] border-solid rounded-[40px] text-base font-semibold",
+        "px-2 py-3 border-[1px] border-solid rounded-[40px] text-base font-semibold transition ease-in-out bg-white",
         disabled
           ? `border-[#c1c9cc] text-[#c1c9cc] cursor-not-allowed`
           : `border-secondary text-secondary hover:bg-secondary hover:text-white`,
