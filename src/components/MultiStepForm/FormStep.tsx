@@ -18,12 +18,17 @@ interface Props
 const FormStep: FC<Props> = (props) => {
   const { currentStep, className, ...rest } = props;
   return (
-    <ol className={cx("flex justify-between px-20 ", className)} {...rest}>
+    <ol
+      className={cx(
+        "flex justify-between px-5 sm:px-10 relative after:absolute after:content-[''] after:top-[25px] after:left-[50%] after:translate-x-[-50%] after:h-px after:w-[calc(100%-126px)] after:bg-[#d9d9d9]",
+        className
+      )}
+      {...rest}>
       {STEPS.map((item, i) => {
         return (
           <Fragment key={item.id}>
             {item.isShow && (
-              <li className="relative before:content-[''] before:absolute before:top-[26px] before:right-[calc(100%-8px)] before:h-px before:bg-[#d9d9d9] before:first:hidden before:w-[24vw] md:before:w-[30vw] md:before:max-w-[210px]">
+              <li className="w-[96px]">
                 <div
                   className={cx(
                     "mx-auto mb-2 text-2xl w-[50px] h-[50px] text-primary bg-[#c0c0c0] flex justify-center items-center rounded-full relative z-10",
@@ -31,7 +36,7 @@ const FormStep: FC<Props> = (props) => {
                   )}>
                   {item.step}
                 </div>
-                <p className="text-primary">{item.title}</p>
+                <p className="text-primary text-center">{item.title}</p>
               </li>
             )}
           </Fragment>
