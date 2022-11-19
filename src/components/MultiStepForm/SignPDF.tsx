@@ -4,6 +4,7 @@ import workerSrc from "../../../pdf-worker";
 import { MultiStepFormContext } from "@/components/MultiStepForm/MultiStepForm";
 import { Button, IButton } from "@/components";
 import Sign from "@/components/MultiStepForm/Sign";
+import { TextDialog, DateDialog } from "./Dialog";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
@@ -67,6 +68,14 @@ const SignPDF: FC<Props> = (props) => {
         <IButton text="文字" onClick={() => setTextMode(!textMode)} />
       </div>
       <Sign activeModal={() => setSignMode(!signMode)} isShowed={signMode} />
+      <DateDialog
+        activeModal={() => setDateMode(!dateMode)}
+        isShowed={dateMode}
+      />
+      <TextDialog
+        activeModal={() => setTextMode(!textMode)}
+        isShowed={textMode}
+      />
     </div>
   );
 };
