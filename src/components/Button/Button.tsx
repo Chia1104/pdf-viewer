@@ -5,18 +5,14 @@
 } from "react";
 import cx from "classnames";
 import styles from "./style.module.scss";
+import { ButtonType } from "./";
 
 interface Props
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  customType?:
-    | "confirm"
-    | "cancel"
-    | "secondary-confirm"
-    | "secondary-cancel"
-    | "primary";
+  customType?: ButtonType;
 }
 
 const Button: FC<Props> = (props) => {
