@@ -1,45 +1,57 @@
-import {
-  type FC,
-  type ChangeEvent,
-  forwardRef,
-  type Ref,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from "react";
+import { type FC, type ChangeEvent, useContext, useRef } from "react";
 import { useToasts } from "@geist-ui/core";
 import { Card, Button } from "@/components";
 import { useId } from "react";
+import {
+  MultiStepFormContext,
+  ActionType,
+} from "@/components/MultiStepForm/MultiStepForm";
+import { MAX_FILE_SIZE, MESSAGE } from "@/utils/file-validator.util";
 
-interface Props {
-  ref?: Ref<any>;
-}
-
-const FileInput: FC<Props> = forwardRef((props: Props, ref) => {
+const FileInput: FC = () => {
   const { setToast } = useToasts();
   const id = useId();
+  const { dispatch } = useContext(MultiStepFormContext);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [file, setFile] = useState<File | null>(null);
-  useImperativeHandle(ref, () => {
-    return {
-      getFiles: () => {
-        return file ? [file] : [];
-      },
-    };
-  });
 
   const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: ActionType.STEP1_FILEISLOADING,
+    });
     // @ts-ignore
     const file = e.target.files[0];
-    if (!file) return;
-    if (file.size > 10000000) {
-      setToast({
-        text: "檔案大小超過 10 MB",
-        type: "error",
+    if (!file) {
+      dispatch({
+        type: ActionType.STEP1_FILEISERROR,
       });
       return;
     }
-    setFile(file);
+    if (file.size > MAX_FILE_SIZE) {
+      setToast({
+        text: MESSAGE.INVALID_FILE_SIZE,
+        type: "error",
+      });
+      dispatch({
+        type: ActionType.STEP1_FILEISERROR,
+      });
+      return;
+    }
+    if (!file.type.includes("pdf")) {
+      setToast({
+        text: MESSAGE.INVALID_FILE_TYPE,
+        type: "error",
+      });
+      dispatch({
+        type: ActionType.STEP1_FILEISERROR,
+      });
+      return;
+    }
+    dispatch({
+      type: ActionType.STEP1_FILEISLOADED,
+      payload: {
+        file,
+      },
+    });
   };
 
   return (
@@ -88,8 +100,6 @@ const FileInput: FC<Props> = forwardRef((props: Props, ref) => {
       </Card>
     </>
   );
-});
-
-FileInput.displayName = "FileInput";
+};
 
 export default FileInput;
