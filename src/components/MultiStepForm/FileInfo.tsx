@@ -6,6 +6,7 @@ import {
 import { z } from "zod";
 import { useToasts } from "@geist-ui/core";
 import { Card, Input, Button } from "@/components";
+import { CUSTOMTYPE } from "@/components/Button";
 
 const schema = z.string().min(0).max(20);
 
@@ -64,14 +65,14 @@ const FileInfo: FC<Props> = (props) => {
       </Card>
       <div className="flex justify-center items-center mt-[26px] gap-[24px]">
         <Button
-          customType="cancel"
+          customType={CUSTOMTYPE.CANCEL}
           onClick={prevStep}
           disabled={isFirstStep}
           className="w-[117px]">
           取消
         </Button>
         <Button
-          customType="confirm"
+          customType={CUSTOMTYPE.CONFIRM}
           onClick={nextStep}
           disabled={isLastStep}
           className="w-[117px]">

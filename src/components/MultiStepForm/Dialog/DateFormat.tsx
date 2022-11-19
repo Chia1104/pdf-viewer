@@ -1,4 +1,4 @@
-import { type FC, forwardRef } from "react";
+import { type FC } from "react";
 import Dialog from "./Dialog";
 import dayjs from "dayjs";
 
@@ -7,7 +7,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const DateFormat: FC<Props> = forwardRef((props: Props) => {
+const DateFormat: FC<Props> = (props) => {
   const { activeModal, isShowed } = props;
   const formats = ["YYYY/MM/DD", "DD/MM/YYYY", "YYYY-MM-DD", "DD-MM-YYYY"];
   return (
@@ -29,8 +29,6 @@ const DateFormat: FC<Props> = forwardRef((props: Props) => {
       </div>
     </Dialog>
   );
-});
-
-DateFormat.displayName = "DateFormat";
+};
 
 export default DateFormat;

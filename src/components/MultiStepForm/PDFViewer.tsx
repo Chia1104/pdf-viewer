@@ -4,6 +4,7 @@ import workerSrc from "../../../pdf-worker";
 import { MultiStepFormContext } from "@/components/MultiStepForm/MultiStepForm";
 import { Button } from "@/components";
 import Sign from "@/components/MultiStepForm/Sign";
+import { CUSTOMTYPE } from "@/components/Button";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
@@ -44,14 +45,14 @@ const PDFViewer: FC<Props> = (props) => {
       </div>
       <div className="flex justify-center items-center mt-[26px] gap-[24px]">
         <Button
-          customType="cancel"
+          customType={CUSTOMTYPE.CANCEL}
           onClick={prevStep}
           disabled={isFirstStep}
           className="w-[117px]">
           取消
         </Button>
         <Button
-          customType="confirm"
+          customType={CUSTOMTYPE.CONFIRM}
           onClick={nextStep}
           disabled={isLastStep}
           className="w-[117px]">

@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import cx from "classnames";
 import { IconProps } from ".";
 
 const SignIcon: FC<IconProps> = (props) => {
