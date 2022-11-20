@@ -10,3 +10,4 @@ export { default as Card } from "./Card";
 export { default as ColorDot, ColorDotWrapper } from "./ColorDot";
 export { default as MultiStepForm } from "./MultiStepForm";
 export { default as Input } from "./Input";
+export { default as Footer } from "./Footer";
