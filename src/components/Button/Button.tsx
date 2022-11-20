@@ -38,6 +38,8 @@ const Button: FC<Props> = (props) => {
           "bg-white border-[#BE7F7F] text-[#BE7F7F] hover:bg-[#BE7F7F] hover:text-white",
         customType === "primary" &&
           "bg-white border-primary text-primary hover:bg-primary hover:text-white",
+        customType === "gray" &&
+          "bg-white border-[#C0C0C0] text-[#C0C0C0] hover:bg-[#C0C0C0] hover:text-white",
         className
       )}
       {...rest}>
