@@ -4,6 +4,7 @@ export enum CUSTOMTYPE {
   SECONDARY_CONFIRM = "secondary-confirm",
   SECONDARY_CANCEL = "secondary-cancel",
   PRIMARY = "primary",
+  GRAY = "gray",
 }
 
 export type ButtonType =
@@ -12,6 +13,7 @@ export type ButtonType =
   | "secondary-confirm"
   | "secondary-cancel"
   | "primary"
+  | "gray"
   | CUSTOMTYPE;
 
 export { default } from "./Button";

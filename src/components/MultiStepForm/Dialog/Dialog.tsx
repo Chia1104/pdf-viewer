@@ -14,7 +14,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Dialog: FC<Props> = forwardRef((props: Props) => {
+const Dialog: FC<Props> = forwardRef((props: Props, ref) => {
   const {
     children,
     activeModal,
@@ -40,13 +40,13 @@ const Dialog: FC<Props> = forwardRef((props: Props) => {
         <div className="w-full pt-6 flex justify-center items-center">
           <Button
             customType="secondary-confirm"
-            className={cx(" py-1 bg-white w-[70%]", btnClass)}>
+            className={cx("py-1 w-[70%]", btnClass)}>
             {btnTitle}
           </Button>
           <Button
             customType={btn2Type}
             className={cx(
-              "ml-2 py-1 bg-white w-[70%]",
+              "ml-2 py-1 w-[70%]",
               btnClass,
               btn2Title ?? "hidden"
             )}>

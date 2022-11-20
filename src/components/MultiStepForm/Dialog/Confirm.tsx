@@ -6,7 +6,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const Confirm: FC<Props> = forwardRef((props: Props) => {
+const Confirm: FC<Props> = forwardRef((props: Props, ref) => {
   const { activeModal, isShowed } = props;
 
   return (
