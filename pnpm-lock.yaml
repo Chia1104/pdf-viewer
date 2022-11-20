@@ -28,6 +28,7 @@ specifiers:
   framer-motion: ^7.6.6
   husky: ^8.0.1
   jsdom: ^20.0.2
+  konva: ^8.3.14
   lint-staged: ^13.0.3
   next: 12.3.3
   next-auth: ^4.16.4
@@ -55,6 +56,7 @@ dependencies:
   classnames: 2.3.2
   dayjs: 1.11.6
   framer-motion: 7.6.6_biqbaboplfbrettd7655fr4n2y
+  konva: 8.3.14
   next: 12.3.3_m5sxuueb27gk6ddc5gums6vtgq
   next-auth: 4.16.4_axequwibc5yadwk55bo7ehxsoe
   next-seo: 5.14.1_axequwibc5yadwk55bo7ehxsoe
@@ -3400,6 +3402,10 @@ packages:
       array-includes: 3.1.5
       object.assign: 4.1.4
     dev: true
+
+  /konva/8.3.14:
+    resolution: {integrity: sha512-6I/TZppgY3Frs//AvZ87YVQLFxLywitb8wLS3qMM+Ih9e4QcB5Yy8br6eq7DdUzxPdbsYTz1FQBHzNxs08M1Tw==}
+    dev: false
 
   /language-subtag-registry/0.3.22:
     resolution: {integrity: sha512-tN0MCzyWnoz/4nHS6uxdlFWoUZT7ABptwKPQ52Ea7URk6vll88bWBVhodtnlfEuCcKWNGoc+uGbw1cwa9IKh/w==}
