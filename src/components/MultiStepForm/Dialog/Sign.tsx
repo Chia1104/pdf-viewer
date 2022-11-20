@@ -8,7 +8,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const Sign: FC<Props> = (props: Props) => {
+const Sign: FC<Props> = (props) => {
   const { activeModal, isShowed } = props;
   const [currentTitle, setCurrentTitle] = useState(0);
   const titles = ["簽名", "圖片"];

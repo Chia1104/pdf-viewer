@@ -1,4 +1,4 @@
-import { type FC, forwardRef } from "react";
+import { type FC } from "react";
 import Dialog from "./Dialog";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const Download: FC<Props> = forwardRef((props: Props, ref) => {
+const Download: FC<Props> = (props) => {
   const { activeModal, isShowed } = props;
 
   return (
@@ -30,8 +30,6 @@ const Download: FC<Props> = forwardRef((props: Props, ref) => {
       </p>
     </Dialog>
   );
-});
-
-Download.displayName = "Download";
+};
 
 export default Download;

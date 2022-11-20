@@ -5,13 +5,14 @@ import {
   type Dispatch,
   type ReactNode,
 } from "react";
-import { Card, Button } from "@/components";
+import { Card } from "@/components";
 import { useMultistep } from "@/hooks";
-import PDFViewer from "@/components/MultiStepForm/PDFViewer";
 import FileInput from "@/components/MultiStepForm/FileInput";
 import FormStep from "@/components/MultiStepForm/FormStep";
 import FileInfo from "@/components/MultiStepForm/FileInfo";
-import SignPDF from "@/components/MultiStepForm/SignPDF";
+import dynamic from "next/dynamic";
+
+const SignPDF = dynamic(() => import("./SignPDF"), { ssr: false });
 
 interface State {
   step1: {

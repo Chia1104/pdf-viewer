@@ -5,8 +5,8 @@ import {
   useState,
   type ChangeEvent,
   type Ref,
-  DetailedHTMLProps,
-  InputHTMLAttributes,
+  type DetailedHTMLProps,
+  type InputHTMLAttributes,
 } from "react";
 import { ZodType } from "zod";
 import cx from "classnames";

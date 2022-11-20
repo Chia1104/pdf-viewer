@@ -1,9 +1,9 @@
-import { useState, type FC, useContext } from "react";
+import { useState, type FC, useContext, useRef } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import workerSrc from "../../../pdf-worker";
 import { MultiStepFormContext } from "@/components/MultiStepForm/MultiStepForm";
 import { Button, IButton } from "@/components";
-import { TextDialog, DateDialog, SignDialog } from "./Dialog";
+import { TextDialog, DateDialog } from "./Dialog";
 import Sign from "./Sign";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
@@ -22,6 +22,7 @@ const SignPDF: FC<Props> = (props) => {
   const [dateModal, setDateModal] = useState<boolean>(false);
   const [textModal, setTextModal] = useState<boolean>(false);
   const { state } = useContext(MultiStepFormContext);
+  const konvaRef = useRef<HTMLDivElement>(null);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
@@ -29,7 +30,9 @@ const SignPDF: FC<Props> = (props) => {
 
   return (
     <div className="relative">
-      <div className="w-full max-w-[663px] h-[339px] overflow-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-thumb-rounded-full">
+      <div
+        ref={konvaRef}
+        className="w-full max-w-[663px] h-[339px] overflow-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-thumb-rounded-full">
         {state.step1.isFileValid && (
           <Document
             file={state.step1.file}

@@ -1,4 +1,4 @@
-import { type FC, forwardRef, ReactNode } from "react";
+import { type FC, type ReactNode } from "react";
 import cx from "classnames";
 import { Modal, Card, Button } from "@/components";
 import { ButtonType, CUSTOMTYPE } from "@/components/Button";
@@ -14,7 +14,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Dialog: FC<Props> = forwardRef((props: Props, ref) => {
+const Dialog: FC<Props> = (props) => {
   const {
     children,
     activeModal,
@@ -56,8 +56,6 @@ const Dialog: FC<Props> = forwardRef((props: Props, ref) => {
       </Card>
     </Modal>
   );
-});
-
-Dialog.displayName = "Dialog";
+};
 
 export default Dialog;

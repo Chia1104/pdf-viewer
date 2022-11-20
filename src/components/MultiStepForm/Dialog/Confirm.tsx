@@ -1,4 +1,4 @@
-import { type FC, forwardRef } from "react";
+import { type FC } from "react";
 import Dialog from "./Dialog";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const Confirm: FC<Props> = forwardRef((props: Props, ref) => {
+const Confirm: FC<Props> = (props) => {
   const { activeModal, isShowed } = props;
 
   return (
@@ -21,8 +21,6 @@ const Confirm: FC<Props> = forwardRef((props: Props, ref) => {
       </p>
     </Dialog>
   );
-});
-
-Confirm.displayName = "Confirm";
+};
 
 export default Confirm;
