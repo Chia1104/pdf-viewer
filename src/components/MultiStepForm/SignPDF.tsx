@@ -18,9 +18,9 @@ interface Props {
 const SignPDF: FC<Props> = (props) => {
   const { nextStep, prevStep, isFirstStep, isLastStep } = props;
   const [numPages, setNumPages] = useState<number | null>(null);
-  const [signMode, setSignMode] = useState<boolean>(false);
-  const [dateMode, setDateMode] = useState<boolean>(false);
-  const [textMode, setTextMode] = useState<boolean>(false);
+  const [signModal, setSignModal] = useState<boolean>(false);
+  const [dateModal, setDateModal] = useState<boolean>(false);
+  const [textModal, setTextModal] = useState<boolean>(false);
   const { state } = useContext(MultiStepFormContext);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
@@ -63,18 +63,18 @@ const SignPDF: FC<Props> = (props) => {
         </Button>
       </div>
       <div className="absolute top-0 right-0 mr-[-130px] flex flex-col gap-[6px]">
-        <IButton text="簽名" onClick={() => setSignMode(!signMode)} />
-        <IButton text="日期" onClick={() => setDateMode(!dateMode)} />
-        <IButton text="文字" onClick={() => setTextMode(!textMode)} />
+        <IButton text="簽名" onClick={() => setSignModal(!signModal)} />
+        <IButton text="日期" onClick={() => setDateModal(!dateModal)} />
+        <IButton text="文字" onClick={() => setTextModal(!textModal)} />
       </div>
-      <Sign activeModal={() => setSignMode(!signMode)} isShowed={signMode} />
+      <Sign activeModal={() => setSignModal(!signModal)} isShowed={signModal} />
       <DateDialog
-        activeModal={() => setDateMode(!dateMode)}
-        isShowed={dateMode}
+        activeModal={() => setDateModal(!dateModal)}
+        isShowed={dateModal}
       />
       <TextDialog
-        activeModal={() => setTextMode(!textMode)}
-        isShowed={textMode}
+        activeModal={() => setTextModal(!textModal)}
+        isShowed={textModal}
       />
     </div>
   );
