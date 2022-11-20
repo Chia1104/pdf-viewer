@@ -44,6 +44,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   files         File[]
+  signs         Sign[]
 }
 
 model VerificationToken {
@@ -55,14 +56,28 @@ model VerificationToken {
 }
 
 enum FileType {
-  IMAGE
-  PDF
+  IMAGE_JPEG
+  IMAGE_PNG
+  IMAGE_JPG
+  IMAGE_WEBP
+  APPLICATION_PDF
 }
 
 model File {
   id        String   @id @default(cuid())
   name      String
   type      FileType
+  size      Int
+  url       String?
+  base64    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+}
+
+model Sign {
+  id        String   @id @default(cuid())
   size      Int
   url       String?
   base64    String?
