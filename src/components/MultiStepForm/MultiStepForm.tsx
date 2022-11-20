@@ -128,11 +128,8 @@ const MultiStepFormProvider = ({ children }: { children: ReactNode }) => {
 const MultiStepForm: FC = () => {
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistep([
-      // eslint-disable-next-line react/jsx-key
       <FileInput nextStep={() => next()} />,
-      // eslint-disable-next-line react/jsx-key
       <FileInfo nextStep={() => next()} prevStep={() => back()} />,
-      // eslint-disable-next-line react/jsx-key
       <SignPDF nextStep={() => next()} prevStep={() => back()} />,
     ]);
   return (

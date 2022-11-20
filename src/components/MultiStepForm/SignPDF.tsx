@@ -3,8 +3,8 @@ import { Document, Page, pdfjs } from "react-pdf";
 import workerSrc from "../../../pdf-worker";
 import { MultiStepFormContext } from "@/components/MultiStepForm/MultiStepForm";
 import { Button, IButton } from "@/components";
-import Sign from "@/components/MultiStepForm/Sign";
-import { TextDialog, DateDialog } from "./Dialog";
+import { TextDialog, DateDialog, SignDialog } from "./Dialog";
+import Sign from "./Sign";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 

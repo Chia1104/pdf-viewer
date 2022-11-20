@@ -17,6 +17,10 @@ const getUserSigns = async (userId: string) => {
     where: {
       userId,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
+    take: 3,
   });
 };
 

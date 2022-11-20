@@ -3,10 +3,12 @@ import { ApiResponse } from "@/shared/types";
 import { CreateSignDto } from "@/shared/dto/sign";
 
 const getUserSigns = async (): Promise<
-  ApiResponse<{
-    id: string;
-    base64: string;
-  }>
+  ApiResponse<
+    {
+      id: string;
+      base64: string;
+    }[]
+  >
 > => {
   const res = await fetch(`${getBaseUrlUtil()}/api/sign`, {
     method: "GET",
