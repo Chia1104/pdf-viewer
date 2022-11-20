@@ -7,7 +7,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const DateFormat: FC<Props> = forwardRef((props: Props) => {
+const DateFormat: FC<Props> = forwardRef((props: Props, ref) => {
   const { activeModal, isShowed } = props;
   const formats = ["YYYY/MM/DD", "DD/MM/YYYY", "YYYY-MM-DD", "DD-MM-YYYY"];
   return (

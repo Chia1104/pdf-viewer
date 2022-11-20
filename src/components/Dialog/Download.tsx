@@ -6,7 +6,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const Download: FC<Props> = forwardRef((props: Props) => {
+const Download: FC<Props> = forwardRef((props: Props, ref) => {
   const { activeModal, isShowed } = props;
 
   return (
@@ -15,7 +15,7 @@ const Download: FC<Props> = forwardRef((props: Props) => {
       activeModal={activeModal}
       title="下載"
       btnTitle="簽署紀錄"
-      btnClass="w-1/3"
+      btnClass="w-[104px]"
       btn2Title="回首頁">
       <p className="absolute top-1/2 translate-y-[-50%] w-full text-center text-primary font-semibold">
         檔案下載完成
