@@ -25,6 +25,7 @@ const Button: FC<Props> = (props) => {
   } = props;
   return (
     <button
+      disabled={disabled}
       className={cx(
         "px-4 py-3 border-[1px] border-solid rounded-[30px] text-base font-semibold transition ease-in-out flex justify-center items-center",
         disabled && `text-[#c1c9cc] cursor-not-allowed ${styles.disabled}`,

@@ -96,7 +96,7 @@ const FileInput: FC<Props> = (props) => {
             lineHeight: "17px",
             letterSpacing: "0.05em",
           }}>
-          僅供10MB以內之PDF、IMG檔
+          僅供 10MB 以內之 PDF 檔
         </p>
         <input
           ref={fileInputRef}

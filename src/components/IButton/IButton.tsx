@@ -17,6 +17,7 @@ const Button: FC<Props> = (props) => {
   const { text, disabled, className, ...rest } = props;
   return (
     <button
+      disabled={disabled}
       className={cx(
         "px-2 py-3 border-[1px] border-solid rounded-[40px] text-base font-semibold transition ease-in-out bg-white",
         disabled

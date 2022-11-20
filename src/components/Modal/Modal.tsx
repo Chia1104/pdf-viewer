@@ -6,7 +6,7 @@ import { useLockedBody } from "usehooks-ts";
 
 interface Props extends MotionProps {
   isShowed: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   activeModal: () => void;
   className?: string;
 }

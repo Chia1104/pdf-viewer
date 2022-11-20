@@ -1,4 +1,4 @@
-import { type FC, forwardRef, useState } from "react";
+import { type FC, useState } from "react";
 import { Modal, Card, Button } from "@/components";
 import { CUSTOMTYPE } from "@/components/Button";
 import cx from "classnames";
@@ -8,7 +8,7 @@ interface Props {
   isShowed: boolean;
 }
 
-const Sign: FC<Props> = forwardRef((props: Props, ref) => {
+const Sign: FC<Props> = (props: Props) => {
   const { activeModal, isShowed } = props;
   const [currentTitle, setCurrentTitle] = useState(0);
   const titles = ["簽名", "圖片"];
@@ -26,7 +26,7 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
                   key={index}
                   className={cx(
                     "relative px-5 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-16px] after:w-[100%] after:h-[6px] after:bg-secondary",
-                    currentTitle != index && "after:hidden"
+                    currentTitle !== index && "after:hidden"
                   )}
                   onClick={() => {
                     setCurrentTitle(index);
@@ -57,8 +57,6 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
       </Card>
     </Modal>
   );
-});
-
-Sign.displayName = "Sign";
+};
 
 export default Sign;

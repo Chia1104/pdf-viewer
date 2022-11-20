@@ -23,6 +23,7 @@ interface State {
     fileNames: string;
   };
   step2: {
+    sign?: string | null;
     img?: string | null;
     date?: string | Date | null;
     text?: string;
@@ -34,6 +35,7 @@ enum ActionType {
   STEP1_FILEISLOADING = "step1/fileIsLoading",
   STEP1_FILEISLOADED = "step1/fileIsLoaded",
   STEP1_FILEISERROR = "step1/fileIsError",
+  STEP2_SETSIGN = "step2/setSign",
 }
 
 interface Action {
@@ -51,6 +53,7 @@ const initialState: State = {
     fileNames: "",
   },
   step2: {
+    sign: null,
     img: null,
     date: null,
     text: "",
@@ -100,6 +103,14 @@ const reducer = (state: State, action: Action) => {
           isError: true,
         },
       };
+    case ActionType.STEP2_SETSIGN:
+      return {
+        ...state,
+        step2: {
+          ...state.step2,
+          sign: action.payload.sign,
+        },
+      };
     default:
       return state;
   }
@@ -117,11 +128,8 @@ const MultiStepFormProvider = ({ children }: { children: ReactNode }) => {
 const MultiStepForm: FC = () => {
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistep([
-      // eslint-disable-next-line react/jsx-key
       <FileInput nextStep={() => next()} />,
-      // eslint-disable-next-line react/jsx-key
       <FileInfo nextStep={() => next()} prevStep={() => back()} />,
-      // eslint-disable-next-line react/jsx-key
       <SignPDF nextStep={() => next()} prevStep={() => back()} />,
     ]);
   return (
