@@ -1,5 +1,5 @@
 import { type FC, forwardRef } from "react";
-import { Dialog } from "./index";
+import Dialog from "./Dialog";
 
 interface Props {
   activeModal: () => void;
@@ -21,7 +21,9 @@ const Download: FC<Props> = forwardRef((props: Props, ref) => {
         檔案下載完成
         <br />
         可至
-        <a className="text-secondary" href="#">
+        <a
+          className="text-secondary"
+          href="@/components/MultiStepForm/Dialog/Download#">
           簽署紀錄
         </a>
         查看嘍！

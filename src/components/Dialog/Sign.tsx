@@ -1,5 +1,6 @@
 import { type FC, forwardRef, useState } from "react";
 import { Modal, Card, Button } from "@/components";
+import { CUSTOMTYPE } from "@/components/Button";
 import cx from "classnames";
 
 interface Props {
@@ -47,7 +48,9 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
             className={"mx-auto mt-2 py-1 w-3/4"}>
             使用簽名
           </Button>
-          <Button customType="gray" className={"mx-auto mt-2 py-1 w-3/4"}>
+          <Button
+            customType={CUSTOMTYPE.GRAY}
+            className={"mx-auto mt-2 py-1 w-3/4"}>
             + 創建新簽名
           </Button>
         </div>

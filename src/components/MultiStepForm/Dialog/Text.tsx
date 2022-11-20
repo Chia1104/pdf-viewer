@@ -1,12 +1,12 @@
-import { type FC, forwardRef } from "react";
-import { Dialog } from "./index";
+import { type FC } from "react";
+import Dialog from "./Dialog";
 
 interface Props {
   activeModal: () => void;
   isShowed: boolean;
 }
 
-const Text: FC<Props> = forwardRef((props: Props, ref) => {
+const Text: FC<Props> = (props) => {
   const { activeModal, isShowed } = props;
 
   return (
@@ -21,8 +21,6 @@ const Text: FC<Props> = forwardRef((props: Props, ref) => {
       />
     </Dialog>
   );
-});
-
-Text.displayName = "Text";
+};
 
 export default Text;

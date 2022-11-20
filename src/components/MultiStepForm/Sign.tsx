@@ -1,6 +1,7 @@
 import SignatureCanvas from "react-signature-canvas";
-import { type FC, forwardRef, Ref, useRef, useState } from "react";
+import { type FC, Ref, useRef, useState } from "react";
 import { Modal, Card, Button, ColorDot, ColorDotWrapper } from "@/components";
+import { CUSTOMTYPE } from "@/components/Button";
 
 interface Props {
   onSign?: () => void;
@@ -9,7 +10,7 @@ interface Props {
   ref?: Ref<SignatureCanvas>;
 }
 
-const Sign: FC<Props> = forwardRef((props: Props, ref) => {
+const Sign: FC<Props> = (props) => {
   const { onSign, activeModal, isShowed } = props;
   const sigCanvas = useRef<SignatureCanvas>(null);
   const [penColor, setPenColor] = useState("#000000");
@@ -47,7 +48,7 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
         </div>
         <div className="w-full h-[60px] flex justify-center items-center gap-[7px]">
           <Button
-            customType="secondary-cancel"
+            customType={CUSTOMTYPE.SECONDARY_CANCEL}
             className="bg-white w-[86px] h-[33px]"
             // @ts-ignore
             onClick={() => sigCanvas.current.clear()}>
@@ -55,7 +56,7 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
           </Button>
           <Button
             onClick={onSign}
-            customType="secondary-confirm"
+            customType={CUSTOMTYPE.SECONDARY_CONFIRM}
             className="bg-white w-[86px] h-[33px]">
             儲存
           </Button>
@@ -63,8 +64,6 @@ const Sign: FC<Props> = forwardRef((props: Props, ref) => {
       </Card>
     </Modal>
   );
-});
-
-Sign.displayName = "Sign";
+};
 
 export default Sign;

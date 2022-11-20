@@ -1,6 +1,7 @@
 import { type FC, forwardRef, ReactNode } from "react";
 import cx from "classnames";
 import { Modal, Card, Button } from "@/components";
+import { ButtonType, CUSTOMTYPE } from "@/components/Button";
 
 interface Props {
   activeModal: () => void;
@@ -9,7 +10,7 @@ interface Props {
   btnTitle: string;
   btnClass?: string;
   btn2Title?: string;
-  btn2Type?: any;
+  btn2Type?: ButtonType;
   children: ReactNode;
 }
 
@@ -22,7 +23,7 @@ const Dialog: FC<Props> = forwardRef((props: Props, ref) => {
     btnTitle,
     btnClass,
     btn2Title,
-    btn2Type = "primary",
+    btn2Type = CUSTOMTYPE.PRIMARY,
   } = props;
 
   return (
