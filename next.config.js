@@ -28,6 +28,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    allowMiddlewareResponseBody: true,
+  },
   async redirects() {
     return [];
   },

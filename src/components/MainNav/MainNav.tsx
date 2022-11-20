@@ -71,18 +71,22 @@ const MainNav: FC = () => {
               </button>
             )}
           </li>
-          <li className="">
-            <button
-              className="text-primary ml-[29px]"
-              style={{
-                fontWeight: 600,
-                fontSize: "16px",
-                lineHeight: "19px",
-                letterSpacing: "0.05em",
-              }}>
-              簽署紀錄
-            </button>
-          </li>
+          {session && (
+            <li className="">
+              <Link href="/history">
+                <a
+                  className="text-primary ml-[29px]"
+                  style={{
+                    fontWeight: 600,
+                    fontSize: "16px",
+                    lineHeight: "19px",
+                    letterSpacing: "0.05em",
+                  }}>
+                  簽署紀錄
+                </a>
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
