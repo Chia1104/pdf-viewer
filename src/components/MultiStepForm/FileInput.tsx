@@ -6,7 +6,7 @@ import {
   MultiStepFormContext,
   ActionType,
 } from "@/components/MultiStepForm/MultiStepForm";
-import { MAX_FILE_SIZE, MESSAGE } from "@/utils/file-validator.util";
+import { validateFile } from "@/utils/file-validator.util";
 
 interface Props {
   nextStep?: () => void;
@@ -34,19 +34,10 @@ const FileInput: FC<Props> = (props) => {
       });
       return;
     }
-    if (file.size > MAX_FILE_SIZE) {
+    const validation = validateFile(file);
+    if (!validation.success) {
       setToast({
-        text: MESSAGE.INVALID_FILE_SIZE,
-        type: "error",
-      });
-      dispatch({
-        type: ActionType.STEP1_FILEISERROR,
-      });
-      return;
-    }
-    if (!file.type.includes("pdf")) {
-      setToast({
-        text: MESSAGE.INVALID_FILE_TYPE,
+        text: validation.error.errors[0].message,
         type: "error",
       });
       dispatch({

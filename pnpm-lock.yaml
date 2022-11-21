@@ -35,6 +35,7 @@ specifiers:
   next: 12.3.3
   next-auth: ^4.16.4
   next-seo: ^5.14.1
+  pdf-merger-js: ^4.1.2
   postcss: ^8.4.18
   prettier: ^2.7.1
   prisma: ^4.6.1
@@ -65,6 +66,7 @@ dependencies:
   next: 12.3.3_m5sxuueb27gk6ddc5gums6vtgq
   next-auth: 4.16.4_axequwibc5yadwk55bo7ehxsoe
   next-seo: 5.14.1_axequwibc5yadwk55bo7ehxsoe
+  pdf-merger-js: 4.1.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-konva: 18.2.3_b37p36zhls44rqmxgh4mahumjq
@@ -753,6 +755,18 @@ packages:
 
   /@panva/hkdf/1.0.2:
     resolution: {integrity: sha512-MSAs9t3Go7GUkMhpKC44T58DJ5KGk2vBo+h1cqQeqlMfdGkxaVB78ZWpv9gYi/g2fa4sopag9gJsNvS8XGgWJA==}
+    dev: false
+
+  /@pdf-lib/standard-fonts/1.0.0:
+    resolution: {integrity: sha512-hU30BK9IUN/su0Mn9VdlVKsWBS6GyhVfqjwl1FjZN4TxP6cCw0jP2w7V3Hf5uX7M0AZJ16vey9yE0ny7Sa59ZA==}
+    dependencies:
+      pako: 1.0.11
+    dev: false
+
+  /@pdf-lib/upng/1.0.1:
+    resolution: {integrity: sha512-dQK2FUMQtowVP00mtIksrlZhdFXQZPC+taih1q4CvPZ5vqdxR/LKBaFg0oAfzd1GlHZXXSPdQfzQnt+ViGvEIQ==}
+    dependencies:
+      pako: 1.0.11
     dev: false
 
   /@prisma/client/4.6.1_prisma@4.6.1:
@@ -4086,6 +4100,10 @@ packages:
       aggregate-error: 3.1.0
     dev: true
 
+  /pako/1.0.11:
+    resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
+    dev: false
+
   /parent-module/1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -4131,6 +4149,21 @@ packages:
   /pathval/1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
+
+  /pdf-lib/1.17.1:
+    resolution: {integrity: sha512-V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==}
+    dependencies:
+      '@pdf-lib/standard-fonts': 1.0.0
+      '@pdf-lib/upng': 1.0.1
+      pako: 1.0.11
+      tslib: 1.14.1
+    dev: false
+
+  /pdf-merger-js/4.1.2:
+    resolution: {integrity: sha512-WZfKIHh2X2jBs10+E7fZ1iJx0qGCtAQNXWlmL6yOzKR0wv3HUly/8bEES0ZSbOfQPI+STa2b1StsPwzVbrKZlA==}
+    dependencies:
+      pdf-lib: 1.17.1
+    dev: false
 
   /pdfjs-dist/2.16.105:
     resolution: {integrity: sha512-J4dn41spsAwUxCpEoVf6GVoz908IAA3mYiLmNxg8J9kfRXc2jxpbUepcP0ocp0alVNLFthTAM8DZ1RaHh8sU0A==}
@@ -5024,7 +5057,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
