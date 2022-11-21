@@ -138,7 +138,7 @@ const MultiStepForm: FC = () => {
       <div className="sm:hidden absolute top-20 py-4 w-screen bg-white">
         <FormStep currentStep={currentStepIndex} />
       </div>
-      <Card className="mt-20 sm:mt-0 border-transparent sm:border-secondary bg-transparent sm:bg-white w-full max-w-[823px] h-[590px] flex flex-col items-center">
+      <Card className="relative mt-20 sm:mt-0 border-transparent sm:border-secondary bg-transparent sm:bg-white w-full max-w-[823px] h-[590px] flex flex-col items-center">
         <div className="w-full max-w-[740px] mt-[30px] mb-[45px]">
           <FormStep className="hidden sm:flex" currentStep={currentStepIndex} />
         </div>
