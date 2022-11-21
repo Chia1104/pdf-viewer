@@ -1,7 +1,7 @@
 import { Card, Button } from "@/components";
 import { useRouter } from "next/router";
 
-const HistoryPage = () => {
+const NotFoundPage = () => {
   const router = useRouter();
 
   return (
