@@ -66,7 +66,7 @@ const FileInput: FC<Props> = (props) => {
   return (
     <>
       <Card
-        className="w-full max-w-[395px] h-[281px] flex flex-col justify-center items-center relative"
+        className="w-full max-w-[395px] h-full sm:h-[281px] flex flex-col justify-center items-center relative"
         style={{
           border: "1px dashed rgba(69, 90, 100, 0.4)",
         }}>
