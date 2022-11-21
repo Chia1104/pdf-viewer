@@ -29,7 +29,7 @@ const SignPDF: FC<Props> = (props) => {
   };
 
   return (
-    <div className="relative">
+    <div>
       <div
         ref={konvaRef}
         className="w-full max-w-[663px] h-[339px] overflow-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-thumb-rounded-full">
@@ -65,7 +65,7 @@ const SignPDF: FC<Props> = (props) => {
           確認
         </Button>
       </div>
-      <div className="absolute top-0 right-0 mr-[-130px] flex flex-col gap-[6px]">
+      <div className="absolute top-0 sm:top-[120px] sm:right-0 translate-x-[50%] lg:translate-x-[125%] mt-6 sm:mt-0 sm:w-auto flex justify-between sm:flex-col gap-[6px]">
         <IButton text="簽名" onClick={() => setSignModal(!signModal)} />
         <IButton text="日期" onClick={() => setDateModal(!dateModal)} />
         <IButton text="文字" onClick={() => setTextModal(!textModal)} />
