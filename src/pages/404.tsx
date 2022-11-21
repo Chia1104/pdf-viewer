@@ -18,4 +18,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default HistoryPage;
+export default NotFoundPage ;
